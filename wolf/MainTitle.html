@@ -1,0 +1,373 @@
+<html>
+	<head>
+		<title> CPUBroz! </title>
+		<meta charset="utf-8">
+		<script language = "javascript"
+		  src="https://code.jquery.com/jquery-3.3.1.js"
+		  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		  crossorigin="anonymous">
+		</script>
+		
+		<script language = "javascript">
+			var isTransiting = false;
+			$(function(){
+				$(".afterSidebar").css("marginLeft",Math.max(350,parseMax($("#bodyElement").width()) / 100 * 25) + "px");
+				changeView("Info/Title.html");
+			});
+			
+			function parseMax(item){
+			
+				if(typeof(item) == "string" && item.indexOf("px") != -1)
+					return parseInt(item.subString(0,item.indexof("px")));
+				return parseInt(item);
+			}
+			$("#textField").on('error',function(){
+				set404();
+			});
+			
+			function res(){
+				$(".afterSidebar").css("marginLeft",Math.max(350,parseMax($("#bodyElement").width()) / 100 * 25) + "px");
+				
+			}
+			function set404(){
+				$("#textField").html('<img src = "Images/404.jpg"/>');
+			}
+			function changeView(item){
+				if(isTransiting)
+					return 0;
+				$("#itemMain").attr("fadeout","now");
+				
+				setTimeout(function(){
+					$("#textField").html('<object align = "center" type="text/html" data="' + item + '" style = "width: 100%;height: 100%;text-align: center;" onerror = "set404()"></object>');
+					$("#itemMain").attr("fadeout","NOT NOW");
+				},1200);
+			}
+			// 시간과 예산이 조금 더 있었더라면..!
+			var display01 = undefined;
+			var display02 = undefined;
+			function changeDisplay(item){
+				//0-10 Information
+				//11-20 CPU Main List
+				//20~ CPU List
+				switch(item){
+					case 0:{
+					
+					}
+					case 11:{
+					
+					}break;
+					case 12:{
+					
+					}break;
+					case 13:{
+					
+					}break;
+					case 14:{
+					
+					}break;
+					case 15:{
+					
+					}break;
+					case 16:{
+					
+					}break;
+					
+					case 17:{
+					
+					}break;
+				}
+			}
+		</script>
+		<style>
+			.back {
+				position: fixed;
+				-webkit-filter: blur(15px);
+				-moz-filter: blur(15px);
+				-o-filter: blur(15px);
+				-ms-filter: blur(15px);
+				filter: blur(15px);
+				background-image: url('Images/BackGround.jpg');
+				width: 150%;
+				height: 150%;
+				background-repeat: repeat;
+				float: left;
+				top: 0%;
+				margin-top: -5%;
+				z-index: -15;
+			}
+			.sidebar {
+				height: 100%; 
+				width: 25%; 
+				min-width: 350px;
+				position: fixed; 
+			
+				top: 0;
+				left: 0;
+				background-color: #000000;
+				padding-top: 20px;
+				color: white;
+				align: center;
+				overflow-y: auto;
+			}
+			.sidebar_content{
+				width: 60%;
+			}
+			.container_header {
+				background-image: url("images/TheCPUBroz.jpg");
+			}
+			
+			.afterSidebar {
+				margin-left: 250px;
+				color: white;
+				z-index: 0;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+
+			}
+			
+			.contentTransparent {
+				margin-top: 5%; 
+				
+				background-color: rgba(190, 196, 206,0.5);
+				width: 800px;
+				height: 820px;
+				align-items : center;
+				opacity: 1;
+				transition: all 1s ease;
+			}
+			
+			.contentTransparent[fadeout=now] {
+				opacity: 0;
+				transition: all 1s ease;
+			}
+			
+
+			
+			/* width */
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: gray; 
+			}
+			 
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #7d82cf; 
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #bdc0f4; 
+			}
+			
+			
+			
+			.dropdown .rotate {
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				transition: all 1s ease;
+				position: absolute;
+			}
+			
+			.dropdown:hover .rotate {
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+				position: absolute;
+			}
+			
+			.dropdown .sub_dropdown {
+				list-style: none;
+				max-height: 0;
+				overflow: hidden;
+				transition: all 2s ease;
+			}
+			
+			.dropdown:hover .sub_dropdown {
+				max-height: 100%;
+				text-decoration: none;
+			}
+			
+			.dropdown[alwaysdisplay=now] .rotate {
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+				position: absolute;
+			}
+			
+			.dropdown[alwaysdisplay=now] .sub_dropdown {
+				max-height: 100%;
+				text-decoration: none;
+			}
+			
+			
+			
+			.dropdown2 .rotate2 {
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				transition: all 1s ease;
+			}
+			
+			.dropdown2:hover .rotate2 {
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+				position: absolute;
+			}
+			
+			.dropdown2 .sub_dropdown2 {
+				list-style: none;
+				max-height: 0;
+				overflow: hidden;
+				transition: all 2s ease;
+			}
+			
+			.dropdown2:hover .sub_dropdown2 {
+				max-height: 100%;
+				text-decoration: none;
+			}
+			
+			a {
+				text-decoration: none;
+				color: white;
+			}
+			
+			.changeView {
+				cursor: pointer;
+			}
+			
+			.sidebar {
+				  -webkit-touch-callout: none; /* iOS Safari */
+				  -webkit-user-select: none; /* Safari */
+				  -khtml-user-select: none; /* Konqueror HTML */
+				  -moz-user-select: none; /* Firefox */
+				  -ms-user-select: none; /* Internet Explorer/Edge */
+				  user-select: none; /* Non-prefixed version, currently
+											  supported by Chrome and Opera */
+			}
+			
+			li {
+			
+				list-style: none;
+			]
+			
+		</style>
+	</head>
+	
+	<body id = "bodyElement" onresize = "res()" >
+		
+		<div class= "sidebar" align = "center">
+			<div class = "sidebar_content" align = "left">
+				<img class = "changeView" src = "Images/TheCPUBroz.jpg" onClick = "changeView('Info/Title.html');"/>
+				<div class = "container_header" id = "but_header">
+					
+				</div>
+				<li>
+					<div class = "changeView" onclick = "window.location.href = '../index.html';"> > 메인으로 이동 </div>
+				</li>
+				<div class = "changeView" id = "but_information" onClick = "changeView('Info/Info.html');">
+					<span class = "rotate"> > </span> Information
+				</div>
+				<div class = "dropdown">
+					<div class = "container_active">
+						<span class = "rotate"> > </span> &nbsp;&nbsp; CPU List
+						<ul class = "sub_dropdown" style = "text-decoration: none;" id = "cpu_dropdown">
+							<li>
+								<div class = "dropdown2" id = "CPU_01" onClick = "changeDisplay(11);">
+									<span class = "rotate2"> > </span> &nbsp;&nbsp; Intel I3 Processors
+									<ul class = "sub_dropdown2">
+										<li> 준비중입니다... </li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class = "dropdown2" id = "CPU_02" onClick = "changeDisplay(12);">
+									<span class = "rotate2"> > </span> &nbsp;&nbsp; Intel I5 Processors
+									<ul class = "sub_dropdown2">
+										<li> 준비중입니다... </li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class = "dropdown2" id = "CPU_03" onClick = "changeDisplay(13);">
+									<span class = "rotate2"> > </span> &nbsp;&nbsp; Intel I7 Processors
+									<ul class = "sub_dropdown2">
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_860.html');"/> i7 860 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_870.html');"/> i7 870 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_875K.html');"/> i7 875K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_880.html');"/> i7 880 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_920.html');"/> i7 920 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_930.html');"/> i7 930 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_940.html');"/> i7 940 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_950.html');"/> i7 950 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_960.html');"/> i7 960 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_970.html');"/> i7 970 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_980.html');"/> i7 980 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_980X.html');"/> i7 980X </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_990X.html');"/> i7 990X </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_2600.html');"/> i7 2600 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_2600K.html');"/> i7 2600K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_2700K.html');"/> i7 2700K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_3820.html');"/> i7 3820 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_3930K.html');"/> i7 3930K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_3960K.html');"/> i7 3960K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_3970K.html');"/> i7 3970K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_3770.html');"/> i7 3770 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_3770K.html');"/> i7 3770K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_4820K.html');"/> i7 4820K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_4960X.html');"/> i7 4960X </a> </li>
+										
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_4770.html');"/> i7 4770 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_4770K.html');"/> i7 4770K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_4771.html');"/> i7 4771  </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_4790.html');"/> i7 4790 </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_4790K.html');"/> i7 4790K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_5820K.html');"/> i7 5820K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_5960X.html');"/> i7 5960X </a> </li>
+										
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_6800K.html');"/> i7 6800K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_6850K.html');"/> i7 6850K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_6900K.html');"/> i7 6900K </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i7/i7_6950X.html');"/> i7 6950X </a> </li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class = "dropdown2" id = "CPU_04" onClick = "changeDisplay(14);">
+									<span class = "rotate2"> > </span> &nbsp;&nbsp; Intel I9 Processors
+									<ul class = "sub_dropdown2">
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i9/i9_7900X.html');"/> i9 7900X </a> </li>
+										<li> <span class = "changeView" onClick = "changeView('CPU/Intel/i9/i9_7920X.html');"/> i9 7920X </a> </li>
+									</ul>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class = "afterSidebar" id = "main" style = "color: black;opacity: 1;" align = "center">
+			<div class = "contentTransparent" id = "itemMain">
+				<div style = "text-align: center;width: 100%;height: 100%;" id = "textField">
+					
+				</div>
+			</div>
+		</div>
+		<div class = "back"> 
+			
+		</div>
+		
+	</body>
+</html>
