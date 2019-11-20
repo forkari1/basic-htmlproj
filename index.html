@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">	
+	<link rel="stylesheet" type="text/css" href="css/mainlayout.css" />
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		
+		var slideIndex = 1;
+        
+        $(document).ready( function(){
+            showDivs(slideIndex);
+            setInterval( autoPlus, 6000 );
+        });
+        
+        function autoPlus()
+        {
+            plusDivs(1);
+        }        
+
+        function plusDivs(n) 
+        {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) 
+        {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1} 
+            if (n < 1) {slideIndex = x.length} ;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+                
+            }
+            x[slideIndex-1].style.display = "block";
+            x[slideIndex-1].style.animation = "opac 0.8s"; 
+        }			
+
+	</script>
+</head>
+
+<body>
+	<header>
+		<div class="h_bar_wrap" id="h_bar_wrap">
+			<div class="h_bar">
+				<div class="main_logo_wrap">
+					<a href="#"><img src="sign.png" width="200" height="86" /></a>
+				</div>
+				<div class="main_menu_wrap">
+					<ul>
+						<li> <a href="han/menu1.html">한정모</a></li>
+						<li> <a href="hoon/home.html">유병훈</a></li>
+						<li> <a href="wolf/MainTitle.html">김성준</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div class="main_img_wrap" >
+			<div class="display_container">
+				<a href="han/menu1.html"><img class="mySlides" src="key4-1.png"></a> 
+                <a href="hoon/home.html"><img class="mySlides" src="10801.jpg"></a> 
+                <a href="wolf/MainTitle.html"><img class="mySlides" src="cpu1.jpg"></a> 
+            </div>
+            <div class="btn_left_wrap">
+                <ul>
+                    <li> <a href="#" onclick="plusDivs(-1)">&#10094;</a></li>
+                </ul>
+            </div>
+
+            <div class="btn_right_wrap">
+                <ul>
+                    <li> <a href="#" onclick="plusDivs(1)">&#10095;</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>    
+
+    <footer>
+        <div>
+            <p>HOME  서비스 이용약관     개인정보    취급방침    이메일 무단수집거부
+            CUSTOMER CENTER : 운영시간 : 오전 10시 ~ 오후 05시 / 점심시간 : 12시 ~ 1시 / 토,일 공휴일 휴무 COMPANY : (주)컴스빌  /  대표이사 : 김문호
+            ADDRESS : 서울시 강서구 마곡동 757 (마곡중앙로 161-8) 두산더랜드파크 A동 1307-9호  /  CALL CENTER : 1522-1460  /  FAX : 02)3665-6303 
+            개인정보관리책임자 : 김동섭  /  사업자등록번호 : 137-81-63489 [사업자정보확인]  /  통신판매업 신고번호 : 제2004-123호	
+            
+            </p>
+            <p>Copyright (c) by (주)컴스빌 All Right Reserved.</p>          
+        </div>
+
+    </footer>
+    
+    
+</body>
+</html>
