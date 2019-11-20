@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>	
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/layout.css" />
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		
+		$(function()
+		{
+			$('a[href^="#"]').click(function()
+			{
+				var the_id = $(this).attr("href");
+				$('html, body').animate({
+					scrollTop:$(the_id).offset().top
+				}, 'slow');
+
+				return false;
+			});
+		});			
+
+	</script>
+</head>
+
+<body>
+
+	<header>
+		<div class="h_bar_wrap" id="h_bar_wrap">
+			<div class="h_bar">
+				<div class="main_logo_wrap">
+					<a href="../index.html"><img src="images/sign.png" width="200" height="86" /></a>
+				</div>
+				<div class="main_menu_wrap">
+					<ul>
+						<li> <a href="menu1.html">CK700</a></li>
+						<li> <a href="menu2.html">FC900R</a></li>
+						<li> <a href="menu3.html">G800K</a></li>
+						<li> <a href="menu4.html">FC750R</a></li>
+						<li> <a href="menu5.html">K63</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<aside>
+		<div>
+			<ul>
+				<li><a href="#h_bar_wrap"></a></li>
+				<li><a href="#main_img_wrap"></a></li>
+				<li><a href="#youtube_wrap"></a></li>
+				<li><a href="#cox_img1"></a></li>
+				<li><a href="#cox_img2"></a></li>
+				<li><a href="#cox_img3"></a></li>
+				<li><a href="#cox_img4"></a></li>
+				<li><a href="#cox_img5"></a></li>
+				<li><a href="#cox_img6"></a></li>
+				<li><a href="#cox_img7"></a></li>
+			</ul>
+		</div>	
+	</aside>
+
+	<section>
+		<div class="main_img_wrap" id="main_img_wrap">
+			<div class="main_img">
+				<img src="images/main/key2-1.png" width="1600" height="900"/>
+			</div>
+			<div class="ban_box_wrap">
+				<div class="ban_box">
+					<table>
+						<tr>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="youtube_wrap" id="youtube_wrap">
+			<iframe src="https://www.youtube.com/embed/qeMGIcMb9dY"> </iframe>
+		</div>
+
+		<div class="cox_img_wrap" id="cox_img_wrap">
+			<div class="cox_img1" id="cox_img1">
+				<img src="images/green/green_01.jpg">
+			</div>
+			<div class="cox_img2" id="cox_img2">
+					<img src="images/green/green_02.jpg">
+			</div>
+			<div class="cox_img3" id="cox_img3">
+					<img src="images/green/green_03.jpg">
+			</div>
+			<div class="cox_img4" id="cox_img4">
+				<img src="images/green/green_04.jpg">
+			</div>
+			<div class="cox_img5" id="cox_img5">
+				<img src="images/green/green_05.jpg">
+			</div>
+			<div class="cox_img6" id="cox_img6">
+				<img src="images/green/green_06.jpg">
+			</div>
+			<div class="cox_img7" id="cox_img7">
+				<img src="images/green/green_07.jpg">
+			</div>
+		</div>
+			
+	</section>
+
+</body>
+</html>
