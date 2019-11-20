@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>병훈쓰</title>
+    <!-- 초기화 -->
+    <style>
+        * {
+            margin: 0; padding: 0;
+            font-family: '맑은 고딕', 'Malgun Gothic', Gothic, sans-serif;
+        }
+        a { text-decoration: none; }
+        li { list-style: none; }
+    </style>
+    <!-- 기본 클래스 -->
+    <style>
+        .pull-left { float: left; }
+        .pull-right { float:right; }
+    </style>
+    <!-- 페이지 -->
+    <style>
+        body {
+            width: 960px; margin: 0 auto;
+            background: #E6E6E6;
+        }
+
+        #page-wrapper {
+            background: white;
+            margin: 40px 0; padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        }
+    </style>
+    <!-- 헤더 -->
+    <style>
+        #main-header { padding: 40px 50px; }
+        .master-title {
+            font-size: 30px;
+            color: #181818;
+        }
+        .master-description {
+            font-size: 15px; font-weight: 500;
+            color: #383838;
+        }
+    </style>
+    <!-- 네비게이션 -->
+    <style>
+        #main-navigation {
+            border-top: 1px solid #C8C8C8;
+            border-bottom: 1px solid #C8C8C8;
+            margin-bottom: 20px;
+            height: 40px;
+        }
+
+        .outer-menu-item {
+            float: left;
+            position: relative;
+        }
+        .outer-menu-item:hover {
+            background: black;
+            color: white
+        }
+
+        .menu-title {
+            display: block;
+            height: 30px; line-height: 30px;
+            text-align: center;
+            padding: 5px 20px;
+        }
+
+        .inner-menu {
+            display: none;
+            position: absolute;
+            top: 40px; left: 0;
+            width: 100%;
+
+            background: white;
+            box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+            z-index: 1000;
+
+            text-align: center
+        }
+
+        .inner-menu-item > a {
+            display: block;
+            padding: 5px 10px;
+            color: black
+        }
+
+        .inner-menu-item > a:hover {
+            background: black;
+            color: white;
+        }
+    </style>
+    <!-- 중앙 내용 -->
+    <style>
+        /* body 태그의 너비: 960픽셀 */
+        /* #page-wrapper 태그의 padding 속성으로 내용물 너비는 920픽셀 */
+        #content { overflow: hidden; }
+        #main-section {
+            float: left;
+            width: 710px;
+        }
+        #main-aside {
+            float: right;
+            width: 200px;
+        }
+    </style>
+    <!-- 좌측 내용물 -->
+    <style>
+        article {
+            padding: 0 10px 20px 10px;
+            border-bottom: 1px solid #C8C8C8;
+        }
+
+        .article-header { padding: 20px 0; }
+        .article-title {
+            font-size: 25px;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+        .article-date { font-size: 13px; }
+        .article-body {
+            font-size: 14px;
+        }
+    </style>
+    <!-- 우측 구성 -->
+    <style>
+        .aside-list { padding: 10px 0 30px 0; }
+        .aside-list > h3 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .aside-list li a {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #6C6C6C;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.outer-menu-item').hover(function () {
+                $(this).find('.inner-menu').show();
+            }, function () {
+                $(this).find('.inner-menu').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+          <div class="main-page">
+            <a href="../index.html"><img src="https://tpucdn.com/download/images/96_icon-v1525522325332.png" align="right"></a>
+          </div>
+            <hgroup>
+                <h1 class="master-title">컴퓨터 하드웨어 구성</h1>
+                <h2 class="master-description">그래픽 카드</h2>
+            </hgroup>
+        </header>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <span class="menu-title">정의</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="home.html">정의</a></li>
+                            <li class="inner-menu-item"><a href="part.html">부품 구성</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">NVIDIA</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="geforce.html">Geforce</a></li>
+                            <li class="inner-menu-item"><a href="tesla.html">Tesla</a></li>
+                            <li class="inner-menu-item"><a href="quadro.html">Quadro</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">AMD</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="radeon.html">Radeon</a></li>
+                            <li class="inner-menu-item"><a href="pro.html">Radeon pro</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="content">
+            <section id="main-section">
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">AMD Radeon Pro 시리즈</h1>
+                        <p class="article-date">2018년 06월 03일</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="https://www.pcgamesn.com/sites/default/files/AMD%20Radeon%20Duo%20Pro.jpg">
+                        <br />
+                        <br />
+                        <h2></h2>
+                        <p>
+                            라데온 프로(Radeon Pro)는 전문가 지향 GPU의 AMD 브랜드이다.
+                            2016년에 AMD의 파이어프로 브랜드를 대체하였다.
+                            주류 소비자/게이머 제품의 라데온 브랜드에 비해 라데온 프로 브랜드는 워크스테이션에서의 사용 및 컴퓨터 지원 설계(CAD), 컴퓨터 생성 이미지(CGI), 디지털 콘텐츠 제작(DCC), 슈퍼컴퓨터/GPGPU 애플리케이션의 실행, 가상현실 프로그램 및 게임의 제작 및 실행을 위해 고안되었다.
+                            라데온 프로 제품 계열은 직접 엔비디아의 쿼드로 및 테슬라 계열의 전문가용 워크스테이션 카드와 경쟁한다.
+                        </p>
+                        <p>[출처 : 위키 백과]</p>
+                        <br/>
+                        <img src="https://static.techspot.com/images2/news/bigimage/2016/04/2016-04-26-image-22.jpg" width="550" height="309">
+                        <p>Radeon Pro Duo 의 상세 스펙. [출처 : Techspot]</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <footer id="main-footer">
+            <a href="#">Created By 기대가 됩니다</a>
+        </footer>
+    </div>
+</body>
+</html>
